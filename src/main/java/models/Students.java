@@ -20,7 +20,7 @@ public class Students {
     }
 
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
