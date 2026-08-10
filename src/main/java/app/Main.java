@@ -39,14 +39,14 @@ public class Main {
 
         List<Enrollments> enrollmentList = new ArrayList<>();
 
-        enrollmentList.add(new Enrollments(001L, 1L, 101L, "Active", LocalDateTime.now().toString()));
-        enrollmentList.add(new Enrollments(002L, 1L, 301L, "Active", LocalDateTime.now().toString()));
-        enrollmentList.add(new Enrollments(003L, 2L, 201L, "Active", LocalDateTime.now().toString()));
+        enrollmentList.add(new Enrollments(01L, 101L, "Active", LocalDateTime.now().toString()));
+        enrollmentList.add(new Enrollments(1L, 301L, "Active", LocalDateTime.now().toString()));
+        enrollmentList.add(new Enrollments(2L, 201L, "Active", LocalDateTime.now().toString()));
 
 
         System.out.println("Enrollment List");
         for (Enrollments enrollments : enrollmentList){
-            System.out.println("ID: " + enrollments.getId() +", Student ID: " + enrollments.getStudentId() + ". Status: " + enrollments.getStatus() + ". Registration Time: " + enrollments.getCreatedAt() );
+            System.out.println("Student ID: " + enrollments.getStudentId() + ". Status: " + enrollments.getStatus() + ". Registration Time: " + enrollments.getEnrollmentDate());
         }
 
 

@@ -2,40 +2,14 @@ package models;
 
 public class Enrollments {
 
-    private Long id;
     private Long studentId;
     private Long courseId;
     private String status;
-    private String createdAt;
+    private String enrollmentDate;
 
-    public class Students {
-        private String firstName;
-        private String lastName;
-    }
-
-    public class Courses {
-        private String name;
-    }
 
     public Enrollments()
     {
-    }
-
-    public Enrollments(long id, long studentId, long courseId, String status, String createdAt) {
-        this.id = id;
-        this.studentId = studentId;
-        this.courseId = courseId;
-        this.status = status;
-        this.createdAt = createdAt;
-
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Long getStudentId() {
@@ -62,11 +36,20 @@ public class Enrollments {
         this.status = status;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
+    public String getEnrollmentDate() {
+        return enrollmentDate;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+    public void setEnrollmentDate(String enrollmentDate) {
+        this.enrollmentDate = enrollmentDate;
     }
+
+    public Enrollments(long studentId, long courseId, String status, String enrollmentDate) {
+        this.studentId = studentId;
+        this.courseId = courseId;
+        this.status = status;
+        this.enrollmentDate = enrollmentDate;
+
+    }
+
 }
