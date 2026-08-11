@@ -39,9 +39,10 @@ public class Main {
 
         List<Enrollments> enrollmentList = new ArrayList<>();
 
-        enrollmentList.add(new Enrollments(01L, 101L, "Active", LocalDateTime.now().toString()));
+        enrollmentList.add(new Enrollments(1L, 101L, "Active", LocalDateTime.now().toString()));
         enrollmentList.add(new Enrollments(1L, 301L, "Active", LocalDateTime.now().toString()));
         enrollmentList.add(new Enrollments(2L, 201L, "Active", LocalDateTime.now().toString()));
+        enrollmentList.add(new Enrollments(3L, 401L, "Deactivated", LocalDateTime.now().toString()));
 
 
         System.out.println("Enrollment List");

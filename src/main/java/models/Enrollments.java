@@ -12,6 +12,13 @@ public class Enrollments {
     {
     }
 
+    public Enrollments(long studentId, long courseId, String status, String enrollmentDate) {
+        this.studentId = studentId;
+        this.courseId = courseId;
+        this.status = status;
+        this.enrollmentDate = enrollmentDate;
+    }
+
     public Long getStudentId() {
         return studentId;
     }
@@ -42,14 +49,6 @@ public class Enrollments {
 
     public void setEnrollmentDate(String enrollmentDate) {
         this.enrollmentDate = enrollmentDate;
-    }
-
-    public Enrollments(long studentId, long courseId, String status, String enrollmentDate) {
-        this.studentId = studentId;
-        this.courseId = courseId;
-        this.status = status;
-        this.enrollmentDate = enrollmentDate;
-
     }
 
 }
