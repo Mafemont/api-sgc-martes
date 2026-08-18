@@ -1,17 +1,17 @@
 package models;
 
-public class Students {
-    private Long id;
+public class Student {
+    public Long id;
     public String firstName;
     private String lastName;
     private String mail;
     private String phone;
 
-    public Students()
+    public Student()
     {
     }
 
-    public Students(Long id, String firstName, String lastName, String mail, String phone) {
+    public Student(Long id, String firstName, String lastName, String mail, String phone) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -20,7 +20,7 @@ public class Students {
     }
 
 
-    public long getId() {
+    public static long getId() {
         return id;
     }
 

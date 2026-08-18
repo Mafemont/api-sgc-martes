@@ -1,7 +1,9 @@
 package models;
+import java.time.LocalDateTime;
 
 
-public class Courses {
+
+public class Course {
 
     private Long id;
     private String code;
@@ -10,17 +12,17 @@ public class Courses {
     private int maxCapacity;
     private String createdAt;
 
-    public Courses()
+    public Course()
     {
     }
 
-    public Courses(Long id, String code, String name, String description, int maxCapacity, String createdAt) {
+    public Course(Long id, String code, String name, String description, int maxCapacity) {
         this.id = id;
         this.code = code;
         this.name = name;
         this.description = description;
-        this.maxCapacity = maxCapacity;
-        this.createdAt = createdAt;
+        this.maxCapacity = 30;
+        this.createdAt = LocalDateTime.now().toString();
     }
 
     public Long getId() {

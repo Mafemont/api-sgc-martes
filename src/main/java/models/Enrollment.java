@@ -1,22 +1,23 @@
 package models;
+import java.time.LocalDateTime;
 
-public class Enrollments {
+public class Enrollment {
 
     private Long studentId;
     private Long courseId;
     private String status;
-    private String enrollmentDate;
+    private String createdAt;
 
 
-    public Enrollments()
+    public Enrollment()
     {
     }
 
-    public Enrollments(long studentId, long courseId, String status, String enrollmentDate) {
+    public Enrollment(long studentId, long courseId, String status) {
         this.studentId = studentId;
         this.courseId = courseId;
         this.status = status;
-        this.enrollmentDate = enrollmentDate;
+        this.createdAt = LocalDateTime.now().toString();
     }
 
     public Long getStudentId() {
@@ -43,12 +44,5 @@ public class Enrollments {
         this.status = status;
     }
 
-    public String getEnrollmentDate() {
-        return enrollmentDate;
-    }
-
-    public void setEnrollmentDate(String enrollmentDate) {
-        this.enrollmentDate = enrollmentDate;
-    }
 
 }
