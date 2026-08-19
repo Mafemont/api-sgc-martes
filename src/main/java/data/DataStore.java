@@ -29,7 +29,7 @@ public void addStudent(Student student){
 
 public Student getStudent(Long id){
    for (Student student : studentList) {
-       if (student.getId().equals(id)) {
+       if (student.getId()==(id)) {
          return student;
          }
      }
@@ -37,7 +37,7 @@ public Student getStudent(Long id){
    }
 
 public void removeStudent(Long id){
-   Student student = getStudents(id);
+   Student student = getStudent(id);
     if (student != null){
        studentList.remove(student);
        }
@@ -51,13 +51,13 @@ public List<Course> getCourse(){
 public void addCourse(Course course){ courseList.add(course);}
 
 public void removeCourse(Long id){
-     Course course = getCourse(id);
+     Course course = findCourseById(id);
       if (course != null){
          courseList.remove(course);
          }
       }
 
-public Course findCourseById(Long id) //?? Parece estar bien
+public Course findCourseById(Long id) {
     for (Course course : courseList) {
       if (course.getId().equals(id)) {
        return course;
@@ -74,8 +74,8 @@ public List<Enrollment> getEnrollment(){
 public void addEnrollment(Enrollment enrollment) {enrollmentList.add(enrollment);}
 
 public Enrollment getEnrollment(Long id) {
-  for (Enrollment enrollment : enrollment) {
-    if (enrollment.getId().equals(id)) {
+  for (Enrollment enrollment : enrollmentList) {
+    if (enrollment.getStudentId().equals(id)) {
       return enrollment;
       }
      }
@@ -90,8 +90,8 @@ public void removeEnrollment(Long id){
       }
 
 public Enrollment findEnrollmentById(Long id) { //??
-   for (Enrollment enrollment : enrollment) {
-    if (enrollment.getId().equals(id)) {
+   for (Enrollment enrollment : enrollmentList) {
+    if (enrollment.getStudentId().equals(id)) {
       return enrollment;
         }
        }
