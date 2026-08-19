@@ -1,5 +1,6 @@
 package app;
 
+import data.DataStore;
 import models.Course;
 import models.Enrollment;
 import models.Student;
@@ -10,7 +11,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] arg){
 
-        List<Student> studentList = new ArrayList<>();
+        /*List<Student> studentList = new ArrayList<>();
 
         studentList.add(new Student(1L, "Maria", "Montoya", "ma@correo.com", "34534"));
         studentList.add(new Student(2L, "Mar", "Rios", "mar@correo.com", "34535"));
@@ -46,8 +47,32 @@ public class Main {
         System.out.println("Enrollment List");
         for (Enrollment enrollment : enrollmentList){
             System.out.println("Student ID: " + enrollment.getStudentId() + ". Status: " + enrollment.getStatus());
-        }
+        }*/
+
+        DataStore dataStore = new DataStore();
+
+        dataStore.addStudent(new Student(1L, "Cristian", "Polo", "polo@gmail.com", "12345678"));
+        dataStore.addStudent(new Student(2L, "Juli", "Mardach", "mardach@gmail.com", "987654321"));
+        dataStore.addStudent(new Student(3L, "Andrea", "Bru", "Bru@gmail.com", "112255336"));
+
+        dataStore.getStudentList().forEach(student -> {
+            System.out.println("ID: " + student.getId() + ", Name: " + student.getFirstName() + " " + student.getLastName());
+        });
+        dataStore.addCourse(new Course(1L,"A01","LÓGICA PROGRAMACIÓN", "Clase de lógica con PSeint", 30));
+        dataStore.addCourse(new Course(2L,"A02","SQL", "Clase de BASE DE DATOS", 10));
+
+        dataStore.getCourseList().forEach(course -> {
+            System.out.println("ID: " + course.getId() + ", Code: " + course.getCode() + " " + course.getname()+ " " + course.getDescription());
+        });
+
+        dataStore.addEnrollment(new Enrollment(1L,1L,"Activo"));
+        dataStore.addEnrollment(new Enrollment(1L,1L,"Inactivo"));
+
+        dataStore.getEnrollmentList().forEach(enrollment -> {
+            System.out.println("ID: " + enrollment.getStudentId() + ", Curso: " + enrollment.getCourseId() + " " + enrollment.getStatus());
+        });
 
 
     }
 }
+//public Enrollment(long studentId, long courseId, String status) {
