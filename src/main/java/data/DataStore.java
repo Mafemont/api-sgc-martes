@@ -85,7 +85,7 @@ public class DataStore {
                 return enrollment;
             }
         }
-        return null;
+
     }
 
     public void removeEnrollment(Long id) {
