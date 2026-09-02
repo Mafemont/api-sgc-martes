@@ -6,6 +6,7 @@ import repositories.StudentRepository;
 import java.util.List;
 
 public class StudentRepositoryImpl implements StudentRepository {
+
     private final List<Student> students;
 
     public StudentRepositoryImpl(List<Student> students) {
@@ -37,10 +38,11 @@ public class StudentRepositoryImpl implements StudentRepository {
         }
     }
 
-
-        @Override
-        public List<Student> findAll () {
-            return students;
-        }
+    @Override
+    public List<Student> findAll() {
+        return students;
     }
+
+
+}
 

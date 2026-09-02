@@ -11,5 +11,5 @@ public interface StudentRepository {
     void deleteById(Long id);
     List<Student> findAll();
 
-}
+    }
 

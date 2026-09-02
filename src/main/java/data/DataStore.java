@@ -7,16 +7,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataStore {
-    private final List<Student> studentList;
-    private final List<Course> courseList;
-    private final List<Enrollment> enrollmentList;
+    private static List<Student> studentList = new ArrayList<>();
+    private static List<Course> courseList;
+    private static List<Enrollment> enrollmentList;
 
     public DataStore() {
-        studentList = new ArrayList<>();
+
         courseList = new ArrayList<>();
         enrollmentList = new ArrayList<>();
     }
 
+    public static List<Student> getStudents() {
+        return studentList;
+    }
 
 
     public List<Student> getStudentList() {
@@ -86,6 +89,7 @@ public class DataStore {
             }
         }
 
+        return null;
     }
 
     public void removeEnrollment(Long id) {
@@ -94,4 +98,6 @@ public class DataStore {
             enrollmentList.remove(enrollment);
         }
     }
+
+
 }

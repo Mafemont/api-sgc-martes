@@ -1,6 +1,5 @@
 package repositories.impl;
 
-import models.Course;
 import models.Enrollment;
 import repositories.EnrollmentRepository;
 
@@ -35,7 +34,7 @@ public class EnrollmentRepositoryImpl implements EnrollmentRepository {
     }
 
     @Override
-    public List<Enrollment> deleteById(long Id) {
+    public void deleteById(long Id) {
         Enrollment enrollment = findById(Id);
         if (enrollment != null) {
             enrollments.remove(enrollment);

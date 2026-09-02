@@ -4,8 +4,16 @@ import data.DataStore;
 import models.Course;
 import models.Enrollment;
 import models.Student;
+import presentation.console.StudentConsole;
+import repositories.StudentRepository;
+import repositories.impl.StudentRepositoryImpl;
+import services.StudentService;
+import services.StudentServiceImpl;
+
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class Main {
@@ -47,7 +55,7 @@ public class Main {
         System.out.println("Enrollment List");
         for (Enrollment enrollment : enrollmentList){
             System.out.println("Student ID: " + enrollment.getStudentId() + ". Status: " + enrollment.getStatus());
-        }*/
+        }
 
         DataStore dataStore = new DataStore();
 
@@ -70,7 +78,16 @@ public class Main {
 
         dataStore.getEnrollmentList().forEach(enrollment -> {
             System.out.println("ID: " + enrollment.getStudentId() + ", Curso: " + enrollment.getCourseId() + " " + enrollment.getStatus());
-        });
+        });*/
+
+
+        StudentRepository studentRepository = new StudentRepositoryImpl(DataStore.getStudents());
+        StudentService studentService = new StudentServiceImpl(studentRepository);
+        Scanner scanner = new Scanner(System.in);
+        StudentConsole studentConsole = new StudentConsole(studentService, scanner);
+
+        studentConsole.createStudent();
+
 
 
     }
