@@ -88,6 +88,8 @@ public class Main {
 
         studentConsole.createStudent();
 
+        studentConsole.listStudents();
+
 
 
     }

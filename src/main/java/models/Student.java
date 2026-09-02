@@ -61,5 +61,18 @@ public class Student {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", mail='" + mail + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
+    }
+
 }
+
+
 
