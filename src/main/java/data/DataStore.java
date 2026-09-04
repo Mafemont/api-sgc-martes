@@ -98,6 +98,4 @@ public class DataStore {
             enrollmentList.remove(enrollment);
         }
     }
-
-
 }
